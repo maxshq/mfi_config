@@ -40,7 +40,7 @@ secret: ""
 
 geodata-mode: true
 geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat"
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
   mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
 
@@ -160,11 +160,16 @@ rules:
   - GEOSITE,netflix,NETFLIX
   - GEOSITE,spotify,Spotify
   - GEOSITE,geolocation-!cn,其他
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,icloud@cn,DIRECT
+  - GEOSITE,apple@cn,DIRECT
+  - GEOSITE,apple-cn,DIRECT
+  - GEOSITE,microsoft@cn,DIRECT
 
-  - GEOIP,google,Google
-  - GEOIP,netflix,NETFLIX
-  - GEOIP,telegram,Telegram
-  - GEOIP,twitter,Twitter
-  - GEOSITE,CN,国内
-  - GEOIP,CN,国内
-  - MATCH,其他
+ # - GEOIP,google,Google
+ # - GEOIP,netflix,NETFLIX
+  #- GEOIP,telegram,Telegram
+  #- GEOIP,twitter,Twitter
+  #- GEOSITE,CN,国内
+ # - GEOIP,CN,国内
+ # - MATCH,其他
