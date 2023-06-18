@@ -113,21 +113,6 @@ proxy-groups:
   # - {name: dns, type: select, proxies: [DIRECT, WARP, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}  # 加入 WARP
   - {name: dns, type: select, proxies: [DIRECT, 自动选择, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]}
 
-  - {name: Google, <<: *pr}
-
-  - {name: Telegram, <<: *pr}
-
-  - {name: Twitter, <<: *pr}
-
-  - {name: pixiv, <<: *pr}
-
-  - {name: YouTube, <<: *pr}
-
-  - {name: NETFLIX, <<: *pr}
-
-  - {name: Spotify, <<: *pr}
-
-  - {name: github, <<: *pr}
 
   - {name: 国内, type: select, proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
 
@@ -152,18 +137,12 @@ proxy-groups:
 
 rules:
   # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(GEOSITE,geolocation-!cn),REJECT # quic
-  - GEOSITE,github,github
-  - GEOSITE,twitter,Twitter
-  - GEOSITE,youtube,YouTube
-  - GEOSITE,google,Google
-  - GEOSITE,telegram,Telegram
-  - GEOSITE,netflix,NETFLIX
-  - GEOSITE,spotify,Spotify
   - GEOSITE,geolocation-!cn,其他
   - GEOSITE,category-ads-all,REJECT
   - GEOSITE,icloud@cn,DIRECT
   - GEOSITE,apple@cn,DIRECT
-  - GEOSITE,apple-cn,DIRECT
+  - GEOSITE,apple,DIRECT
+  - GEOSITE,icloud,DIRECT
   - GEOSITE,microsoft@cn,DIRECT
 
  # - GEOIP,google,Google
